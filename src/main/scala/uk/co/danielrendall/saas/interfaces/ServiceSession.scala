@@ -8,6 +8,10 @@ trait ServiceSession:
 
   def queryParameters: Map[String, List[String]]
 
+  // Only keep the first of each parameter assuming it's non-blank
+  def reducedQueryParameters: Map[String, String] =
+    queryParameters.flatMap { case (key, list) => list.headOption.map(value => key -> value) }.toMap
+
   def bodyAsBytes: Array[Byte]
 
   def bodyAsInputStream: InputStream
