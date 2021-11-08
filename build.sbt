@@ -7,7 +7,6 @@ ThisBuild / organizationName := "services-as-a-service-interfaces"
 githubOwner := "danielrendall"
 githubRepository := "ServicesAsAServiceInterfaces"
 githubTokenSource := TokenSource.Environment("GITHUB_TOKEN")
-releaseCrossBuild := true
 
 lazy val root = (project in file("."))
   .settings(
